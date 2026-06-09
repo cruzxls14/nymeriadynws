@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Nymeria Dynamics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a; /* Azul muy oscuro del texto */
+            --primary-blue: #2563eb; /* Azul eléctrico del botón/acento */
+            --bg-gray: #f8fafc;      /* Fondo gris muy sutil */
+            --border-color: #e2e8f0;
+            --text-gray: #64748b;
+        }
+
+        body {
+            background: #e2e2e2; /* Fondo de la "mesa" */
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* Hoja A4 */
+        .page {
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* --- Elementos de Diseño Comunes --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 20px;
+        }
+
+        .brand-logo {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .brand-logo i {
+            font-size: 24px;
+            color: var(--primary-dark);
+        }
+
+        .doc-title {
+            text-align: right;
+        }
+
+        .doc-title h1 {
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .doc-title p {
+            margin: 5px 0 0;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Tarjetas de Información (Estilo Mockup) */
+        .info-card {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-col h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .info-col p {
+            margin: 0;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 15px;
+        }
+
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th {
+            text-align: left;
+            background: var(--primary-dark);
+            color: white;
+            padding: 12px 15px;
+            font-size: 13px;
+            text-transform: uppercase;
+            border-radius: 4px 4px 0 0; /* Solo esquinas superiores si es fila única */
+        }
+        
+        th:first-child { border-top-left-radius: 8px; }
+        th:last-child { border-top-right-radius: 8px; }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            color: #333;
+            font-size: 14px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .total-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -20px;
+            margin-bottom: 40px;
+        }
+
+        .total-box {
+            width: 250px;
+            background: var(--bg-gray);
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .total-final {
+            border-top: 1px solid var(--border-color);
+            padding-top: 10px;
+            margin-top: 10px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-size: 18px;
+        }
+
+        /* Secciones de Texto (Acta de Inicio) */
+        .section-title {
+            font-size: 16px;
+            color: var(--primary-dark);
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        .text-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+            text-align: justify;
+        }
+
+        .signatures {
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .sign-box {
+            flex: 1;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .sign-box p {
+            margin: 0;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary-dark);
+        }
+        .sign-box span {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-gray);
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+
+        /* Marca de agua sutil */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 400px;
+            color: rgba(37, 99, 235, 0.03); /* Azul muy muy transparente */
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page { box-shadow: none; margin: 0; page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="watermark"><i class="fa-solid fa-wolf-pack-battalion"></i></div>
+
+        <div class="header">
+            <div class="brand-logo">
+                <i class="fa-solid fa-wolf-pack-battalion"></i>
+                <span>NYMERIA<br>DYNAMICS</span>
+            </div>
+            <div class="doc-title">
+                <h1>Cotización de Servicios</h1>
+                <p>REF: NYM-QT-2026-0042</p>
+                <p>Fecha: 04 de Marzo, 2026</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-col">
+                <h3>Cliente</h3>
+                <p>Grupo Empresarial Norteño</p>
+                <span style="font-size:13px; color:#666;">Atn: Ing. Roberto Martinez</span>
+            </div>
+            <div class="info-col" style="text-align: right;">
+                <h3>Válido Hasta</h3>
+                <p>04 de Abril, 2026</p>
+            </div>
+        </div>
+
+        <div class="section-title">Alcance de Ingeniería</div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Descripción / Servicio</th>
+                    <th style="width: 15%; text-align: center;">Cantidad</th>
+                    <th style="width: 15%; text-align: right;">P. Unitario</th>
+                    <th style="width: 20%; text-align: right;">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <strong>Arquitectura de Plataforma Web</strong><br>
+                        <span style="font-size:12px; color:#666;">Backend Laravel, Base de Datos MySQL, Panel Admin.</span>
+                    </td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">$45,000</td>
+                    <td style="text-align: right;">$45,000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>App Móvil (iOS & Android)</strong><br>
+                        <span style="font-size:12px; color:#666;">Desarrollo en Flutter, Módulo Offline, GPS.</span>
+                    </td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">$60,000</td>
+                    <td style="text-align: right;">$60,000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Despliegue de Infraestructura</strong><br>
+                        <span style="font-size:12px; color:#666;">Configuración VPS, Docker, SSL, Dominio.</span>
+                    </td>
+                    <td style="text-align: center;">1</td>
+                    <td style="text-align: right;">$8,000</td>
+                    <td style="text-align: right;">$8,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total-section">
+            <div class="total-box">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span>$113,000 MXN</span>
+                </div>
+                <div class="total-row">
+                    <span>IVA (16%):</span>
+                    <span>$18,080 MXN</span>
+                </div>
+                <div class="total-row total-final">
+                    <span>Total:</span>
+                    <span>$131,080 MXN</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">Términos y Condiciones</div>
+        <div class="text-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div style="background: var(--bg-gray); padding: 15px; border-radius: 8px;">
+                <strong>Forma de Pago:</strong><br>
+                50% Anticipo al iniciar<br>
+                25% Contra entrega de Beta<br>
+                25% Contra entrega Final y Código
+            </div>
+            <div style="background: var(--bg-gray); padding: 15px; border-radius: 8px;">
+                <strong>Tiempo de Entrega:</strong><br>
+                8 Semanas a partir de la recepción del anticipo y material base.
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Nymeria Dynamics | Tech Studio</strong></p>
+            <p>www.nymeria.dev | hello@nymeria.dev | +52 492 000 0000</p>
+            <p>Este documento es una propuesta tecnológica y comercial confidencial.</p>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <div class="brand-logo">
+                <i class="fa-solid fa-wolf-pack-battalion"></i>
+                <span>NYMERIA<br>DYNAMICS</span>
+            </div>
+            <div class="doc-title">
+                <h1>Acta de Inicio de Proyecto</h1>
+                <p>PROJECT CHARTER</p>
+                <p>ID: PRJ-2026-BETA</p>
+            </div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-col">
+                <h3>Nombre del Proyecto</h3>
+                <p>Sistema de Gestión Logística v1.0</p>
+            </div>
+            <div class="info-col" style="text-align: center;">
+                <h3>Fecha Inicio</h3>
+                <p>10 de Marzo, 2026</p>
+            </div>
+            <div class="info-col" style="text-align: right;">
+                <h3>Tipo</h3>
+                <p>Desarrollo a Medida</p>
+            </div>
+        </div>
+
+        <div class="section-title">1. Objetivos del Proyecto</div>
+        <div class="text-content">
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="margin-bottom: 10px; padding-left: 20px; border-left: 2px solid var(--primary-blue);">
+                    Digitalizar el proceso de captura de inventarios mediante aplicación móvil offline.
+                </li>
+                <li style="margin-bottom: 10px; padding-left: 20px; border-left: 2px solid var(--primary-blue);">
+                    Centralizar la información en un panel administrativo web accesible vía navegador.
+                </li>
+                <li style="margin-bottom: 10px; padding-left: 20px; border-left: 2px solid var(--primary-blue);">
+                    Garantizar la escalabilidad de la base de datos para futuras integraciones.
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-title">2. Entregables Principales</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fase</th>
+                    <th>Entregable</th>
+                    <th>Fecha Estimada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fase 1: UX/UI</td>
+                    <td>Mockups de Alta Fidelidad y Prototipo</td>
+                    <td>20 Marzo, 2026</td>
+                </tr>
+                <tr>
+                    <td>Fase 2: Backend</td>
+                    <td>API REST documentada y Estructura BD</td>
+                    <td>10 Abril, 2026</td>
+                </tr>
+                <tr>
+                    <td>Fase 3: Producción</td>
+                    <td>Código Fuente y Despliegue en Servidor</td>
+                    <td>05 Mayo, 2026</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="section-title">3. Roles y Responsabilidades</div>
+        <div class="text-content">
+            <p><strong>Nymeria Dynamics (Proveedor):</strong> Responsable de la arquitectura, desarrollo, pruebas de seguridad y despliegue del sistema.</p>
+            <p><strong>Cliente:</strong> Responsable de proveer feedback en un plazo no mayor a 48 horas, entregar accesos a servidores (si aplica) y realizar los pagos según cronograma.</p>
+        </div>
+
+        <div class="section-title">4. Acuerdo de Inicio</div>
+        <div class="text-content">
+            <p>Al firmar este documento, ambas partes aceptan el alcance, cronograma y costos estipulados en la cotización <strong>REF: NYM-QT-2026-0042</strong> y dan por iniciadas las operaciones formales del proyecto.</p>
+        </div>
+
+        <div class="signatures">
+            <div class="sign-box">
+                <br><br>
+                <p>Ing. [Tu Nombre]</p>
+                <span>Lead Engineer<br>Nymeria Dynamics</span>
+            </div>
+            <div class="sign-box">
+                <br><br>
+                <p>Ing. Roberto Martinez</p>
+                <span>Representante Legal<br>Grupo Empresarial Norteño</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Nymeria Dynamics | Tech Studio</strong></p>
+            <p>Documento de control interno y vinculación legal de proyecto.</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+/* =========================================
+   1. Importación de Fuentes y Variables
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Paleta de Colores Dark UI */
+    --bg-color: #050810;
+    --primary-blue: #2563eb;
+    --accent-cyan: #38bdf8;
+    --text-white: #ffffff;
+    --text-gray: #94a3b8;
+    
+    /* Efectos de Vidrio (Glassmorphism) */
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --glow-effect: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* =========================================
+   2. Reseteo y Estilos Base
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    /* Fondo con gradientes sutiles para profundidad */
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita scroll horizontal accidental */
+    padding-top: 80px; /* Ajusta este valor según la altura de tu header */
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+
+/* Utilidad para centrar contenido */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =========================================
+   3. Componentes (Botones)
+   ========================================= */
+.btn-primary {
+    background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-effect);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--text-white);
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--text-white);
+    background: rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   4. Header y Navegación
+   ========================================= */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(5, 8, 16, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: padding 0.3s;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.logo i {
+    color: var(--text-white);
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--text-white);
+}
+
+/* =========================================
+   5. Sección Hero (Principal)
+   ========================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    min-height: 600px;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Animación del lobo */
+.wolf-graphic {
+    width: 400px; /* Esto ajusta tu imagen de 800px a 400px en pantalla */
+    height: auto; /* Mantiene la proporción si no es perfectamente cuadrada */
+    filter: drop-shadow(0 0 20px cyan);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* =========================================
+   6. Sección de Servicios (Tarjetas)
+   ========================================= */
+.services { padding: 80px 0; }
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 60px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea brillante superior al hacer hover */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.card:hover::before { opacity: 1; }
+
+.card-icon {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   7. Sección de Frase y Estadísticas
+   ========================================= */
+.quote-section {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.quote-text {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.quote-text strong { font-weight: 700; }
+
+.stats {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding: 60px 0;
+    margin: 40px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: left;
+    padding: 0 40px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    flex: 1;
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.stat-label {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   8. CTA y Footer
+   ========================================= */
+.cta {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+footer {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding: 50px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover { color: var(--text-white); }
+
+.copyright {
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Ajustes para el logo de imagen */
+.logo img {
+    height: 70px; /* Altura ideal para el header */
+    width: auto;  /* El ancho se ajusta solo para no deformarse */
+    display: block;
+}
+
+/* Opcional: Si quieres que en el footer sea un poco más discreto */
+footer .logo img {
+    height: 55px; /* Un poco más pequeño en el pie de página */
+    opacity: 0.8; /* Un toque elegante para que no brille tanto en el fondo */
+}
+
+/* =========================================
+   9. Diseño Responsivo (Mobile)
+   ========================================= */
+@media (max-width: 768px) {
+    nav ul { display: none; } /* Ocultar menú en móvil para demo */
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+    
+    .hero h1 { font-size: 2.5rem; }
+    
+    .hero-buttons { justify-content: center; }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .stat-item {
+        border-right: none;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+

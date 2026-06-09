@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nymeria Dynamics - Estudio Tecnológico</title>
+    
+    <link rel="stylesheet" href="styles/main_style.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="resource/image/logonav.png" alt="Logo de Nymeria Dynamics">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" style="color: #fff;">Inicio</a></li>
+                    <li><a href="services.html">Servicios y Precios</a></li>
+                    <li><a href="process.html">Proceso</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                    <li><a href="/en/index.html" style="color: #38bdf8;">English <i class="fa-solid fa-globe"></i></a></li>
+                </ul>
+            </nav>
+            <button class="btn-primary" onclick="window.location.href='contact.html'">Iniciar Proyecto</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <span style="color: var(--accent-cyan); font-weight: 600; letter-spacing: 2px; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px; display: block;">
+                    Estudio de Ingeniería Digital
+                </span>
+                <h1>Ingeniería de<br>Sistemas Digitales<br>Inteligentes</h1>
+                
+                <p style="font-size: 1.2rem; line-height: 1.6; color: #94a3b8;">
+                    <strong>Creamos, desarrollamos y lanzamos</strong> plataformas web escalables, aplicaciones móviles multiplataforma e infraestructura digital robusta. Sin exageraciones. Solo código de precisión.
+                </p>
+                
+                <div class="hero-buttons">
+                    <button class="btn-primary">Hablemos de tu Proyecto</button>
+                    <button class="btn-secondary">Ver Demos de Ingeniería</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="resource/image/wolf-hero.png" class="wolf-graphic" alt="Lobo de Nymeria Dynamics">
+            </div>
+        </section>
+
+        <section class="services" id="platforms">
+            <h2 class="section-title">Ingeniería Principal</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Plataformas Web</h3>
+                    <p>Arquitecturas backend complejas, paneles SaaS e integraciones API utilizando Laravel. Estructuramos datos para escalar.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Sitios Web Profesionales</h3>
+                    <p>Interfaces corporativas de alto rendimiento optimizadas para SEO. Construidas para velocidad, seguridad y conversión.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Ecosistemas Móviles</h3>
+                    <p>Aplicaciones iOS y Android de rendimiento nativo construidas con Flutter. Capacidades offline-first e integración de hardware.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats" id="infrastructure" style="position: relative;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                
+                <h2 style="font-size: 2.5rem; margin-bottom: 10px; color: var(--text-white);">TECNOLOGÍA SIMPLIFICADA</h2>
+                <p style="color: var(--text-gray); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                    Arquitectura compleja, gestionada de forma sencilla. Nos encargamos de los servidores, despliegues y seguridad para que tú no tengas que hacerlo.
+                </p>
+
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fa-brands fa-laravel"></i></span>
+                    <span class="stat-label">Arquitectura<br>Backend Laravel</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fa-brands fa-flutter"></i></span>
+                    <span class="stat-label">Móvil Multiplataforma<br>Flutter</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fa-brands fa-docker"></i></span>
+                    <span class="stat-label">Contenedorización<br>Docker</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number"><i class="fa-solid fa-network-wired"></i></span>
+                    <span class="stat-label">DNS Gestionado y<br>Ops de Servidor</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="labs">
+            <h2 class="section-title" style="font-size: 1.5rem; color: var(--text-gray);">Laboratorios de Concepto Nymeria</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 40px;">
+                Prototipos internos que demuestran nuestras capacidades arquitectónicas.
+            </p>
+            <div class="cards-grid">
+                <div class="card" style="border-color: rgba(56, 189, 248, 0.3);">
+                    <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+                    <h3>Demo de Rastreador de Inventario</h3>
+                    <p>Un sistema de logística en tiempo real usando API de Laravel y sincronización móvil con Flutter.</p>
+                    <a href="#" style="color: var(--accent-cyan); margin-top: 10px; display: inline-block;">Ver Demo en Vivo &rarr;</a>
+                </div>
+                <div class="card" style="border-color: rgba(56, 189, 248, 0.3);">
+                    <div class="card-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                    <h3>Motor de Reservas</h3>
+                    <p>Sistema de reservas multi-inquilino con notificaciones por correo y pagos automatizados.</p>
+                    <a href="#" style="color: var(--accent-cyan); margin-top: 10px; display: inline-block;">Ver Arquitectura &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            
+            <h2 style="font-size: 3rem; margin-bottom: 20px;">Tú Creces, Nosotros Codificamos.</h2>
+            
+            <p style="color: #94a3b8; margin-bottom: 30px; font-size: 1.2rem;">
+                ¿Listo para construir algo poderoso? Diseñemos tu futuro digital.
+            </p>
+            <button class="btn-primary" onclick="window.location.href='contact.html'" style="padding: 15px 40px; font-size: 1.1rem;">Obtener Propuesta Técnica</button>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+            <div class="logo">
+                <img src="resource/image/logonav.png" alt="Logo de Nymeria Dynamics">
+            </div>
+                <nav>
+                    <ul>
+                        <li><a href="#platforms">Plataformas Web</a></li>
+                        <li><a href="#mobile">Apps Móviles</a></li>
+                        <li><a href="#infrastructure">Soporte de Servidor</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Nymeria Dynamics. Todos los derechos reservados. | Estudio de Ingeniería
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

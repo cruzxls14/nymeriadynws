@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Proyecto - Nymeria Dynamics</title>
+    
+    <link rel="stylesheet" href="styles/main_style.css"> 
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #fff;
+            font-family: inherit;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Información de contacto lateral */
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .info-icon {
+            color: var(--accent-cyan);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .info-content h4 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-content p, .info-content a {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .info-content a:hover {
+            color: var(--accent-cyan);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="resource/image/logonav.png" alt="Logo de Nymeria Dynamics"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="services.html">Servicios y Precios</a></li>
+                    <li><a href="process.html">Proceso</a></li>
+                    <li><a href="contact.html" class="active">Contacto</a></li>
+                    <li><a href="/en/contact.html" style="color: #38bdf8;">English <i class="fa-solid fa-globe"></i></a></li>
+                </ul>
+            </nav>
+            <button class="btn-primary" onclick="window.location.href='contact.html'">Iniciar Proyecto</button>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section class="hero" style="min-height: 30vh; padding: 60px 0 20px 0;">
+            <div class="hero-content" style="width: 100%; text-align: left;">
+                <span style="color: var(--accent-cyan); letter-spacing: 2px; text-transform: uppercase;">Consulta Técnica</span>
+                <h1 style="margin-bottom: 20px;">Diseñemos tu Visión</h1>
+                <p style="color: #94a3b8; max-width: 600px; margin: 0;">
+                    Completa las especificaciones técnicas a continuación. Analizaremos tus requerimientos y responderemos con una propuesta preliminar en un plazo de 24 horas.
+                </p>
+            </div>
+        </section>
+
+        <section style="padding-bottom: 100px;">
+            <div class="contact-grid">
+                
+                <div class="contact-form-wrapper">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label class="form-label">Nombre Completo</label>
+                            <input type="text" class="form-input" placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Correo Laboral</label>
+                            <input type="email" class="form-input" placeholder="juan@empresa.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Proyecto</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>Seleccionar Arquitectura...</option>
+                                <option value="web-platform">Plataforma Web / Sistema SaaS</option>
+                                <option value="mobile-app">Aplicación Móvil (iOS/Android)</option>
+                                <option value="website">Sitio Web Corporativo</option>
+                                <option value="infrastructure">Infraestructura Servidor/DNS</option>
+                                <option value="other">Otro / Consultoría</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Presupuesto Estimado (MXN)</label>
+                            <select class="form-select">
+                                <option value="" disabled selected>Seleccionar Rango...</option>
+                                <option value="small">$15k - $40k MXN (Sitio Web/MVP)</option>
+                                <option value="medium">$40k - $120k MXN (Plataforma Estándar)</option>
+                                <option value="large">$120k - $300k+ MXN (Sistema Complejo)</option>
+                                <option value="enterprise">Empresarial (Presupuesto Personalizado)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Especificaciones del Proyecto</label>
+                            <textarea class="form-textarea" placeholder="Describe brevemente las funciones principales, preferencia de stack tecnológico o metas de negocio..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 15px;">Enviar Especificaciones</button>
+                    </form>
+                </div>
+
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card">
+                        <h3 style="margin-bottom: 30px; font-size: 1.5rem;">Comunicación Directa</h3>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope info-icon"></i>
+                            <div class="info-content">
+                                <h4>Consultas por Correo</h4>
+                                <p>¿Prefieres enviar un resumen?</p>
+                                <a href="mailto:hello@nymeria.dev">hello@nymeria.dev</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-brands fa-whatsapp info-icon"></i>
+                            <div class="info-content">
+                                <h4>Chat Rápido</h4>
+                                <p>Lunes - Viernes, 9am - 6pm</p>
+                                <a href="#">+52 (Tu Número)</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot info-icon"></i>
+                            <div class="info-content">
+                                <h4>Sede Principal</h4>
+                                <p>Zacatecas, México<br>Disponibles para operaciones remotas globales.</p>
+                            </div>
+                        </div>
+
+                        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0;">
+
+                        <h4 style="margin-bottom: 15px; font-size: 1rem;">Conecta en Redes</h4>
+                        <div class="social-icons" style="justify-content: flex-start;">
+                            <a href="#" style="font-size: 1.5rem; margin-right: 20px;"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" style="font-size: 1.5rem; margin-right: 20px;"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" style="font-size: 1.5rem;"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="logo"><img src="resource/image/logonav.png" alt="Logo"></div>
+                <nav>
+                    <ul>
+                        <li><a href="services.html">Servicios</a></li>
+                        <li><a href="process.html">Proceso</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 Nymeria Dynamics. Todos los derechos reservados.</div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Work - Nymeria Dynamics</title>
+    <link rel="stylesheet" href="../styles/main_style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .process-step { border-left: 2px solid var(--accent-cyan); padding-left: 30px; margin-bottom: 40px; position: relative; }
+        .process-step::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--bg-dark); border: 2px solid var(--accent-cyan); border-radius: 50%; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><img src="../resource/image/logonav.png" alt="Nymeria Dynamics Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services & Pricing</a></li>
+                    <li><a href="process.html" class="active">Process</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../process.html" style="color: #38bdf8;">Español <i class="fa-solid fa-globe"></i></a></li>
+                </ul>
+            </nav>
+            <button class="btn-primary" onclick="window.location.href='contact.html'">Start Project</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero" style="min-height: 40vh; padding: 60px 0;">
+            <div class="hero-content" style="width: 100%; text-align: center;">
+                <span style="color: var(--accent-cyan); letter-spacing: 2px; text-transform: uppercase;">Engineering Standard</span>
+                <h1 style="margin-bottom: 20px;">The Workflow</h1>
+                <p style="color: #94a3b8; max-width: 700px; margin: 0 auto;">
+                    We don't guess. We engineer. Our process ensures transparency, code quality, and on-time delivery.
+                </p>
+            </div>
+        </section>
+
+        <section style="max-width: 800px; margin: 0 auto; padding-bottom: 100px;">
+            
+            <div class="process-step">
+                <h3 style="color: var(--text-white); font-size: 1.5rem; margin-bottom: 10px;">01. Discovery & Architecture</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">We analyze your requirements not just for today, but for the future. We define the database schema, the API endpoints, and the server infrastructure before writing a single line of code.</p>
+            </div>
+
+            <div class="process-step">
+                <h3 style="color: var(--text-white); font-size: 1.5rem; margin-bottom: 10px;">02. Development Sprints</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">We work in 2-week agile sprints. You get regular updates and access to a staging environment (Nymeria Labs) to see your product coming to life in real-time.</p>
+            </div>
+
+            <div class="process-step">
+                <h3 style="color: var(--text-white); font-size: 1.5rem; margin-bottom: 10px;">03. QA & Security Audit</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">Rigorous testing. We perform stress tests, check for security vulnerabilities (SQL injection, XSS), and ensure mobile responsiveness across devices.</p>
+            </div>
+
+            <div class="process-step">
+                <h3 style="color: var(--text-white); font-size: 1.5rem; margin-bottom: 10px;">04. Deployment & Handover</h3>
+                <p style="color: #94a3b8; line-height: 1.6;">We configure the production servers (DigitalOcean/AWS), set up SSL certificates, and hand over the keys. <strong>You own the code.</strong> No lock-ins.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3 style="margin-bottom: 20px;">Ready to start Step 01?</h3>
+                <button class="btn-primary" onclick="window.location.href='contact.html'">Start Discovery Phase</button>
+            </div>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="logo"><img src="../resource/image/logonav.png" alt="Logo"></div>
+                <nav>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="process.html">Process</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                 <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="copyright">&copy; 2026 Nymeria Dynamics. All rights reserved.</div>
+        </footer>
+    </div>
+</body>
+</html>
